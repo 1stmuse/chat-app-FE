@@ -1,0 +1,164 @@
+.signIn {
+  width: 100vw;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: grey;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.signIn .signIn-card {
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  width: 300px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.signIn .signIn-card .text-input, .signIn .signIn-card .password-input {
+  margin: 0px auto;
+  margin-bottom: 20px;
+  width: 220px;
+}
+
+.signIn .signIn-card .text-input input, .signIn .signIn-card .password-input input {
+  display: block;
+  color: grey;
+  background: transparent;
+  padding: 5px 0px;
+  padding-left: 1px;
+  border: none;
+  border-bottom: 1px solid grey;
+  width: 100%;
+  outline: none;
+}
+
+.signIn .signIn-card .login-btn {
+  width: 150px;
+  margin: 10px auto;
+  border-radius: 10px;
+  color: grey;
+  cursor: pointer;
+  padding: 5px 0px;
+  text-align: center;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.home {
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #4f4e4c;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home .home-main {
+  width: 50vw;
+}
+
+.home .home-main .compare-div {
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.home .home-main .compare-div div input[type='text'] {
+  border: none;
+  border-bottom: 1px solid grey;
+  background: transparent;
+  margin-bottom: 20px;
+  outline: none;
+  color: #4f4e4c;
+  display: block;
+}
+
+.home .home-main .compare-div div input[type='file'] {
+  display: none;
+}
+
+.home .home-main .compare-div .label {
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  cursor: pointer;
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.home .home-main .compare-div .label:hover {
+  color: #212121;
+}
+
+.home .home-main .compare-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 300px;
+}
+
+.home .home-main .compare-btn div {
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  padding: 5px 10px;
+  text-align: center;
+  width: 100px;
+  cursor: pointer;
+}
+
+.home .home-main .compare-btn div:hover {
+  color: #212121;
+}
+
+.home .home-main .error {
+  margin-top: 20px;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  color: red;
+  font-weight: bold;
+  padding: 5px 0px;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
