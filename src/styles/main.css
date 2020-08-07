@@ -1,6 +1,6 @@
 .signIn {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,7 +92,7 @@
 }
 
 .home .home-main .compare-div {
-  height: 200px;
+  height: 130px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,9 +132,10 @@
   display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
+  margin-top: 20px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 300px;
+  width: 70%;
 }
 
 .home .home-main .compare-btn div {
@@ -160,6 +161,74 @@
   font-weight: bold;
   padding: 5px 0px;
   text-align: center;
+}
+
+.home .home-main .result-div {
+  text-align: center;
+}
+
+.home .home-main .result-div .result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70px;
+  height: 70px;
+  color: black;
+  border-radius: 50%;
+  margin-top: 10px !important;
+}
+
+@media screen and (max-width: 750px) {
+  .home-main {
+    width: 70vw !important;
+  }
+  .compare-div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 300px !important;
+  }
+  .compare-btn {
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+    margin-left: 0 !important;
+    width: 70% !important;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .home-main {
+    width: 90vw !important;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .compare-btn {
+    margin: 0 auto !important;
+    margin-top: 30px !important;
+  }
 }
 
 * {

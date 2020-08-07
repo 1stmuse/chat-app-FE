@@ -10,7 +10,7 @@
         .home-main{
             width: 50vw;
                 .compare-div{
-                    height: 200px;
+                    height: 130px;
                     display: flex;
                     justify-content: space-around;
                         & div input[type='text']{
@@ -39,8 +39,9 @@
                 .compare-btn{
                     display: flex;
                     margin: 0 auto;
+                    margin-top: 20px;
                     justify-content: space-around;
-                    width: 300px;
+                    width: 70%;
                         & div{
                             border-radius: 5px;
                             box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
@@ -62,6 +63,50 @@
                     padding: 5px 0px;
                     text-align: center;
                 }
+                .result-div{
+                    text-align: center;
+                        .result{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 70px;
+                            height: 70px;
+                            color: black;
+                            border-radius: 50%;
+                            margin-top: 10px !important;
+                        }
+                }
         }
 
+}
+
+@media screen and (max-width:750px){
+    .home-main{
+        width: 70vw !important;
+    }
+    .compare-div{
+        flex-direction: column;
+        justify-content: space-between;
+        height: 300px !important;
+    }
+    .compare-btn{
+        justify-content: space-between !important;
+        margin-left: 0 !important;
+        width: 70% !important;
+    }
+}
+
+@media screen and (max-width:440px){
+    .home-main{
+        width: 90vw !important;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .compare-btn{
+        margin: 0 auto !important;
+        margin-top: 30px !important;
+    }
 }

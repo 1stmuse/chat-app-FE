@@ -5,31 +5,32 @@ const SignIn = (props) => {
     const [password, setPassword]= useState('')
 
     const submit=()=>{
-        fetch('https://62667f41-743b-43c6-94a9-b0bba1003243.mock.pstmn.io/login',{
+        if(username ==='' && password === '') return
+        fetch('https://0693ee4b-098e-4c78-8010-66e96299af11.mock.pstmn.io/login',{
             method:'POST',
-            mode:'no-cors',
-            headers:{'Content-Type': 'application/json'},
+            headers:{'Content-Type':'application/json'},
             body:JSON.stringify({
                 username,
                 password
             })
         })
-        // .then(res=>res.json())
+        .then(res=>res.json())
         .then(result=>{
-            // if(result.success){/
-                console.log(result)
-                // props.history.push('/home')
-            // }else{
-                // alert('an error ocurred')
-            // }
+            if(result.success){
+                props.history.push('/home')
+            }else{
+                alert('an error ocurred')
+            }
         }).catch(err=>{
             alert(err)
         })
+        setPassword('')
+        setUsername('')
 
     }
     return (
         <div className='signIn'>
-            <div><h1>Compare text with ease !!</h1></div>
+            <div style={{marginBottom:'40px', textAlign:'center'}} ><h1>Compare text with ease !!</h1></div>
             <div className='signIn-card'>
                 <div className='text-input'>
                     <input 

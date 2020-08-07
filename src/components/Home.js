@@ -6,6 +6,8 @@ const Home = ({history}) => {
     const [doc1, setDoc1] = useState('')
     const [doc2, setDoc2] = useState('')
     const [error, setError] = useState(false)
+    const [result, setResult] = useState(null)
+    const [similarWord,setWord] = useState([])
 
     const handleUpload =(e, doc)=>{
         const file = e.target.files[0]
@@ -25,10 +27,22 @@ const Home = ({history}) => {
         if(!doc1.length && !doc2.length){
             setError(true)
             return false
-        }else if(!doc2.length && !doc1.length){
-            setError(true)
-            return false
         }else{
+            fetch('https://0693ee4b-098e-4c78-8010-66e96299af11.mock.pstmn.io/compare',{
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({
+                    doc1,
+                    doc2
+                })
+            })
+            .then(res=>res.json())
+            .then(result=>{
+              setResult(result.similarity)
+              setWord(result.similarChars)
+            }).catch(err=>{
+                alert(err)
+            })
             setError(false)
             console.log(doc1 , doc2)
         }
@@ -58,6 +72,13 @@ const Home = ({history}) => {
                         <label htmlFor='file2' className='label' >Upload document</label>
                         <input type='file' id='file2' onChange={(e)=>handleUpload(e,'doc2')}/>
                     </div>
+                </div>
+                <div className='result-div' style={{display: result===null? 'none' : 'block'}}>
+                    <p>Percentage of Comparison</p>
+                    <div className='result' style={{margin:'0 auto', border: result >=50 ?'2px solid green' : '2px solid yellow'}} >
+                        <p>{result}% </p>
+                    </div>
+                    {similarWord.length ? <p>Similar words are {similarWord.toString()} </p>: null}
                 </div>
                 <div className='compare-btn'>
                     <div onClick={handleCompare} >Compare</div>
