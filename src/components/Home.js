@@ -39,7 +39,7 @@ const Home = ({history}) => {
                 <div className='get-started' style={{textAlign:'center'}} >
                     <h2>Get started</h2>
                 </div>
-                <div className='compare-div'>
+                <div className='compare-div' >
                     <div>
                         <h3>First Person</h3>
                         <input type='text' 
