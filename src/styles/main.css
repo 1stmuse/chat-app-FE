@@ -1,55 +1,64 @@
 .signIn {
   width: 100vw;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  color: grey;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.signIn .talk {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+.signIn .border {
+  margin: 20vh auto;
+  width: 250px;
+  height: 250px;
 }
 
 .signIn .signIn-card {
+  position: relative;
+  border: 1px solid blueviolet;
   border-radius: 10px;
+  margin-bottom: 30px;
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  width: 300px;
-  height: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
-.signIn .signIn-card .text-input, .signIn .signIn-card .password-input {
-  margin: 0px auto;
+.signIn .signIn-card .logTxt {
+  position: absolute;
+  left: -50px;
+  top: -20px;
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+  width: 150px;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
+.signIn .signIn-card .inputs {
+  padding: 10px;
+}
+
+.signIn .signIn-card .inputs .text-input, .signIn .signIn-card .inputs .password-input {
+  margin: 0 auto;
   margin-bottom: 20px;
-  width: 220px;
+  border-radius: 5px;
+  border: 1px solid blueviolet;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
-.signIn .signIn-card .text-input input, .signIn .signIn-card .password-input input {
+.signIn .signIn-card .inputs .text-input input, .signIn .signIn-card .inputs .password-input input {
   display: block;
-  color: grey;
+  color: white;
   background: transparent;
   padding: 5px 0px;
-  padding-left: 1px;
+  padding-left: 10px;
   border: none;
-  border-bottom: 1px solid grey;
   width: 100%;
   outline: none;
 }
@@ -58,13 +67,37 @@
   width: 150px;
   margin: 10px auto;
   border-radius: 10px;
-  color: grey;
+  margin-bottom: 20px;
+  color: white;
   cursor: pointer;
   padding: 5px 0px;
   text-align: center;
+  background: blueviolet;
+}
+
+.signIn .signIn-card .login-btn:hover {
+  background-color: #6A3BB0;
+}
+
+.text-input {
+  margin-top: 60px !important;
+}
+
+.account {
+  color: blueviolet;
+}
+
+.account .h3 {
+  cursor: pointer;
+}
+
+.text-input-name {
+  margin: 0 auto;
+  margin-top: 70px;
+  border-radius: 5px;
+  border: 1px solid blueviolet;
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 
 .home {
@@ -229,6 +262,100 @@
     margin: 0 auto !important;
     margin-top: 30px !important;
   }
+}
+
+.signIn {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.signIn .talk {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+.signIn .border {
+  margin: 20vh auto;
+  width: 250px;
+  height: 250px;
+}
+
+.signIn .signIn-card {
+  position: relative;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.signIn .signIn-card .logTxt {
+  position: absolute;
+  left: -50px;
+  top: -20px;
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+  width: 150px;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
+.signIn .signIn-card .inputs-reg {
+  margin-top: 50px;
+  padding: 10px;
+}
+
+.signIn .signIn-card .inputs-reg .text-input-reg, .signIn .signIn-card .inputs-reg .password-input-reg {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid blueviolet;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.signIn .signIn-card .inputs-reg .text-input-reg input, .signIn .signIn-card .inputs-reg .password-input-reg input {
+  display: block;
+  color: white;
+  background: transparent;
+  padding: 5px 0px;
+  padding-left: 10px;
+  border: none;
+  width: 100%;
+  outline: none;
+}
+
+.signIn .signIn-card .login-btn {
+  width: 150px;
+  margin: 10px auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: white;
+  cursor: pointer;
+  padding: 5px 0px;
+  text-align: center;
+  background: blueviolet;
+}
+
+.signIn .signIn-card .login-btn:hover {
+  background-color: #6A3BB0;
+}
+
+.text-input {
+  margin-top: 60px !important;
+}
+
+.account {
+  color: blueviolet;
+}
+
+.account .h3 {
+  cursor: pointer;
 }
 
 * {

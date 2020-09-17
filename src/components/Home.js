@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 const Home = ({history}) => {
     const [name1, setName1] = useState('')

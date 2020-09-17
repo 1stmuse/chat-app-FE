@@ -32,17 +32,19 @@
                 width: 150px;
                 transform: rotate(-25deg);
             }
-            .inputs{
-                // border: 1px solid;
+            .inputs-reg{
+                // border: 1px solid red;
+                margin-top: 50px;
+                // width: 400px;
                 padding: 10px;
-                .text-input, .password-input{
+                .text-input-reg, .password-input-reg{
                     margin: 0 auto;
                     margin-bottom: 20px;
                     border-radius: 5px;
                     border: 1px solid blueviolet;
                     box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
                 }
-                .text-input input, .password-input input{
+                .text-input-reg input, .password-input-reg input{
                     display: block;
                     color: white;
                     background: transparent;
@@ -77,11 +79,4 @@
         .h3{
             cursor: pointer;
         }
-}
-.text-input-name{
-    margin: 0 auto;
-    margin-top: 70px;
-    border-radius: 5px;
-    border: 1px solid blueviolet;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
 }

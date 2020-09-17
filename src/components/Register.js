@@ -6,7 +6,8 @@ import React, {useState, useEffect} from 'react';
 //         id:'akinnagbe'
 //     }
 // })
-const SignIn = (props) => {
+const Register = (props) => {
+    const [name, setName]= useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword]= useState('')
 
@@ -40,10 +41,18 @@ const SignIn = (props) => {
             <h1 className='talk'>Let's Talk</h1>
             <div className='border'>
                 <div className='signIn-card'>
-                    <div className='logTxt'><h1>LOGIN</h1></div>
+                    <div className='logTxt'><h1>Register</h1></div>
                     <div>
-                        <div className='inputs'>
-                            <div className='text-input'>
+                        <div className='inputs-reg'>
+                            <div className='text-input-reg'>
+                                <input 
+                                    type='text' 
+                                    value={name} 
+                                    placeholder='name'
+                                    onChange={(e)=>setName(e.target.value)}
+                                />
+                            </div>
+                            <div className='text-input-reg'>
                                 <input 
                                     type='text' 
                                     value={username} 
@@ -51,7 +60,7 @@ const SignIn = (props) => {
                                     onChange={(e)=>setUsername(e.target.value)}
                                 />
                             </div>
-                            <div className='password-input'>
+                            <div className='password-input-reg'>
                                 <input 
                                     type='password' 
                                     value={password} 
@@ -61,14 +70,14 @@ const SignIn = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className='login-btn'onClick={submit} >Login</div>
+                    <div className='login-btn'onClick={submit} >register</div>
                 </div>
                 <div className='account'>
-                    <h3 className='h3'>don't have an account ? signUp</h3>
+                    <h3 className='h3'>have an account? login</h3>
                 </div>
             </div>
         </div>
     );
 };
 
-export default SignIn;
+export default Register;
