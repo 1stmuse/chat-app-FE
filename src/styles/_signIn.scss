@@ -1,7 +1,7 @@
 .signIn{
     width: 100vw;
     height: 100vh;
-    background-color: #000000;
+    // background-color: #000000;
     overflow: hidden;
     .talk{
         text-align: center;
@@ -44,7 +44,7 @@
                 }
                 .text-input input, .password-input input{
                     display: block;
-                    color: white;
+                    color: #000000;
                     background: transparent;
                     padding: 5px 0px;
                     padding-left: 10px;

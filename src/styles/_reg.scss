@@ -1,12 +1,12 @@
 .signIn{
     width: 100vw;
     height: 100vh;
-    background-color: #000000;
+    // background-color: #000000;
     overflow: hidden;
     .talk{
         text-align: center;
         margin-top: 50px;
-        color: white;
+        color: #000000;
         font-weight: bold;
     }
     .border{
@@ -46,7 +46,7 @@
                 }
                 .text-input-reg input, .password-input-reg input{
                     display: block;
-                    color: white;
+                    color: #000000;
                     background: transparent;
                     padding: 5px 0px;
                     padding-left: 10px;
@@ -66,9 +66,7 @@
                 text-align: center;
                 background:blueviolet
             }
-            .login-btn:hover{
-               background-color: #6A3BB0;
-            }
+           
     }
 }
 .text-input{

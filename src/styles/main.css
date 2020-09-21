@@ -1,7 +1,6 @@
 .signIn {
   width: 100vw;
   height: 100vh;
-  background-color: #000000;
   overflow: hidden;
 }
 
@@ -54,7 +53,7 @@
 
 .signIn .signIn-card .inputs .text-input input, .signIn .signIn-card .inputs .password-input input {
   display: block;
-  color: white;
+  color: #000000;
   background: transparent;
   padding: 5px 0px;
   padding-left: 10px;
@@ -101,180 +100,106 @@
 }
 
 .home {
-  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  background: #ffffff;
   width: 100vw;
   height: 100vh;
+  padding: 40px 30px;
+}
+
+.home .welcome {
+  text-align: center;
+}
+
+.home .roomsDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  color: #4f4e4c;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  margin-top: 50px;
 }
 
-.home .home-main {
-  width: 50vw;
+.home .roomsDiv .rooms {
+  width: 20%;
+  min-height: 300px;
+  margin-right: 30px;
 }
 
-.home .home-main .compare-div {
-  height: 130px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.home .home-main .compare-div div input[type='text'] {
-  border: none;
-  border-bottom: 1px solid grey;
-  background: transparent;
+.home .roomsDiv .rooms .room {
+  padding: 5px 15px;
+  background-color: blueviolet;
+  border-radius: 10px;
   margin-bottom: 20px;
-  outline: none;
-  color: #4f4e4c;
-  display: block;
-}
-
-.home .home-main .compare-div div input[type='file'] {
-  display: none;
-}
-
-.home .home-main .compare-div .label {
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  padding: 5px 10px;
-  cursor: pointer;
-  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-}
-
-.home .home-main .compare-div .label:hover {
-  color: #212121;
-}
-
-.home .home-main .compare-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 auto;
-  margin-top: 20px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  width: 70%;
-}
-
-.home .home-main .compare-btn div {
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-  padding: 5px 10px;
   text-align: center;
-  width: 100px;
+}
+
+.home .roomsDiv .rooms .room .link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
   cursor: pointer;
 }
 
-.home .home-main .compare-btn div:hover {
-  color: #212121;
+.home .roomsDiv .roomForm {
+  width: 25%;
+  text-align: center;
+  height: 200px;
+  margin-top: 20px;
 }
 
-.home .home-main .error {
-  margin-top: 20px;
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  color: red;
-  font-weight: bold;
+.home .roomsDiv .roomForm .add {
+  text-align: center;
+  font-weight: 1.3rem;
+  margin-bottom: 25px;
+}
+
+.home .roomsDiv .roomForm .may {
+  border-radius: 5px;
+  border: 1px solid blueviolet;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.home .roomsDiv .roomForm .may .roomName {
+  display: block;
+  color: #000000;
+  background: transparent;
+  padding: 5px 0px;
+  padding-left: 12px;
+  border: none;
+  width: 100%;
+  outline: none;
+}
+
+.home .roomsDiv .roomForm .addBtn {
+  width: 150px;
+  margin: 10px auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  color: white;
+  cursor: pointer;
   padding: 5px 0px;
   text-align: center;
+  background: blueviolet;
 }
 
-.home .home-main .result-div {
-  text-align: center;
-}
-
-.home .home-main .result-div .result {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 70px;
-  height: 70px;
-  color: black;
-  border-radius: 50%;
-  margin-top: 10px !important;
-}
-
-@media screen and (max-width: 750px) {
-  .home-main {
-    width: 70vw !important;
-  }
-  .compare-div {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    height: 300px !important;
-  }
-  .compare-btn {
-    -webkit-box-pack: justify !important;
-        -ms-flex-pack: justify !important;
-            justify-content: space-between !important;
-    margin-left: 0 !important;
-    width: 70% !important;
-  }
-}
-
-@media screen and (max-width: 440px) {
-  .home-main {
-    width: 90vw !important;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .compare-btn {
-    margin: 0 auto !important;
-    margin-top: 30px !important;
-  }
+.home .roomsDiv .roomForm .addBtn:hover {
+  background-color: #6A3BB0;
 }
 
 .signIn {
   width: 100vw;
   height: 100vh;
-  background-color: #000000;
   overflow: hidden;
 }
 
 .signIn .talk {
   text-align: center;
   margin-top: 50px;
-  color: white;
+  color: #000000;
   font-weight: bold;
 }
 
@@ -321,7 +246,7 @@
 
 .signIn .signIn-card .inputs-reg .text-input-reg input, .signIn .signIn-card .inputs-reg .password-input-reg input {
   display: block;
-  color: white;
+  color: #000000;
   background: transparent;
   padding: 5px 0px;
   padding-left: 10px;
@@ -340,10 +265,6 @@
   padding: 5px 0px;
   text-align: center;
   background: blueviolet;
-}
-
-.signIn .signIn-card .login-btn:hover {
-  background-color: #6A3BB0;
 }
 
 .text-input {
