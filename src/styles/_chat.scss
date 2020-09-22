@@ -1,0 +1,44 @@
+
+.chat-main{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 1px solid;
+    .chat-header{
+        background-color: blueviolet;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        height: 70px;
+        .chat-logo{
+            width: 150px;
+            display: flex;
+            color: white;
+        }
+    }
+    .chat-body{
+        min-height: 350px;
+    }
+    .chat-input-div{
+        display: flex;
+        align-items: center;
+        height: 40px;
+        border: 2px solid blueviolet;
+        .chat-input{
+            width: 90%;
+            display: block;
+            height: 100%;
+            font-size: 1.3rem;
+            padding-left: 10px;
+        }
+        .chat-btn{
+            width: 100px;
+            padding: 10px;
+            background-color: blueviolet;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}

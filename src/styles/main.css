@@ -279,6 +279,66 @@
   cursor: pointer;
 }
 
+.chat-main {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 1px solid;
+}
+
+.chat-main .chat-header {
+  background-color: blueviolet;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+  height: 70px;
+}
+
+.chat-main .chat-header .chat-logo {
+  width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+}
+
+.chat-main .chat-body {
+  min-height: 350px;
+}
+
+.chat-main .chat-input-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  border: 2px solid blueviolet;
+}
+
+.chat-main .chat-input-div .chat-input {
+  width: 90%;
+  display: block;
+  height: 100%;
+  font-size: 1.3rem;
+  padding-left: 10px;
+}
+
+.chat-main .chat-input-div .chat-btn {
+  width: 100px;
+  padding: 10px;
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 * {
   margin: 0;
   padding: 0;
