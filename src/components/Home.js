@@ -1,35 +1,58 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom'
 
+
 const Home = ({history}) => {
     const [room, setRoom] = useState('')
-    const [rooms, setRooms] = useState([{id:3,name:'james'}, {id:2,name:'james'}, {id:1,name:'james'}])
+    const [rooms, setRooms] = useState([])
+
+    const fetchRooms = async()=>{
+        const response = await  fetch('http://localhost:8000/api/user/rooms',{credentials:'same-origin'})
+        const data = await response.json()
+        if(data.success){
+            setRooms([...rooms, ...data.rooms])
+        }
+        console.log(data)
+    }
+    const clearCook=()=>{
+        localStorage.clear('token')
+    }
+
+    useEffect(()=>{
+        fetchRooms()
+    },[rooms])
 
     return (
         <div className='home'>
-            <div className='welcome'><h2>Welcome Akinnagbe!! join a room or create one to start chatting</h2></div>
+            <header className='header'>
+                <h1 style={{marginRight:'15px'}} >Let's Talk</h1>
+                <p class="fa fa-comments fa-2x" aria-hidden="true"></p>
+            </header>
+            <div className='welcome'><h2>Welcome Akinnagbe!!</h2></div>
             <div className='roomsDiv'>
-                <div className='rooms'>
-                    {
-                        rooms.length === 0 ?
-                             <div>no rooms create, create one</div> :
-                             rooms.map(room=>(
-                                 <div key={room.id} className='room'>
-                                    <Link className='link'>{room.name} </Link>
-                                </div>
-                            ))
-                    }
-                </div>
                 <div className='roomForm'>
                     <div className='add'>
                         <h3>Create chatroom</h3>
                     </div>
-                    <div classname='form-div'>
+                    <div className='flexForm'>
                         <div className='may'>
                             <input type='text' className='roomName'/>
                         </div>
-                        <div className='addBtn'>Create</div>
+                            <div className='addBtn' onClick={clearCook} >Create</div>
                     </div>
+                </div>
+                <div className='rooms'>
+                    <h2 className='avail'>Available rooms</h2>
+                    {
+                        rooms.length === 0 ?
+                            <div>no rooms create, create one</div> :
+                            rooms.map(room=>(
+                                <div key={room._id} className='room'>
+                                    <h2>{room.name} </h2>
+                                    <Link className='link'>join </Link>
+                                </div>
+                            ))
+                    }
                 </div>
             </div>
         </div>

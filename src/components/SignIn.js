@@ -1,11 +1,6 @@
 import React, {useState, useEffect} from 'react';
-// import io from 'socket.io-client'
+import Alert from './Alert'
 
-// const newSock = io('http://localhost:8000', {
-//     query:{
-//         id:'akinnagbe'
-//     }
-// })
 const SignIn = (props) => {
     const [username, setUsername] = useState('')
     const [password, setPassword]= useState('')
@@ -13,7 +8,8 @@ const SignIn = (props) => {
 
     const submit=()=>{
         if(username ==='' && password === '') return
-        fetch('https://0693ee4b-098e-4c78-8010-66e96299af11.mock.pstmn.io/login',{
+        fetch('http://localhost:8000/api/user/login',{
+            credentials:'same-origin',
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({
@@ -24,12 +20,16 @@ const SignIn = (props) => {
         .then(res=>res.json())
         .then(result=>{
             if(result.success){
+                localStorage.setItem('token', result.token)
+                Alert('success', result.message)
                 props.history.push('/home')
             }else{
-                alert('an error ocurred')
+                Alert('error', result.error.message)
+                return
             }
         }).catch(err=>{
-            alert(err)
+            Alert('error', err)
+            console.log(err)
         })
         setPassword('')
         setUsername('')

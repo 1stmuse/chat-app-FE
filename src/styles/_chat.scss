@@ -1,4 +1,11 @@
-
+.header{
+    width: 100%;
+    padding: 15px 0px;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
 .chat-main{
     width: 50%;
     margin: 0 auto;
@@ -8,16 +15,38 @@
         background-color: blueviolet;
         display: flex;
         align-items: center;
-        padding: 15px;
-        height: 70px;
+        padding: 10px;
         .chat-logo{
-            width: 150px;
             display: flex;
             color: white;
+            align-items: center;
+            .ball{
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: grey;
+            }
+            h3{
+                font-size: 1.6rem;
+                margin-left: 10px;
+            }
         }
     }
     .chat-body{
         min-height: 350px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 10px 0px 10px;
+        .mychat, .others{
+            width: 70px;
+            border: 1px solid;
+        }
+        .mychat{
+            align-self: flex-end;
+        }
+        .others{
+            align-items: flex-start;
+        }
     }
     .chat-input-div{
         display: flex;
@@ -40,5 +69,17 @@
             font-weight: bold;
             cursor: pointer;
         }
+    }
+}
+
+@media screen and (max-width:750px){
+    .chat-main{
+        width: 70% !important;
+    }
+}
+
+@media screen and (max-width:500px){
+    .chat-main{
+        width: 90% !important;
     }
 }

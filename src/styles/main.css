@@ -101,68 +101,109 @@
 
 .home {
   background: #ffffff;
-  width: 100vw;
-  height: 100vh;
-  padding: 40px 30px;
 }
 
-.home .welcome {
-  text-align: center;
-}
-
-.home .roomsDiv {
+.home .header {
+  width: 100%;
+  padding: 15px 0px;
+  background-color: blueviolet;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 50px;
+  color: white;
 }
 
-.home .roomsDiv .rooms {
-  width: 20%;
-  min-height: 300px;
-  margin-right: 30px;
+.home .welcome {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.home .roomsDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 50vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+}
+
+.home .roomsDiv .rooms .side-hr {
+  height: 300px;
+  border: 1px solid;
+  overflow: scroll;
+}
+
+.home .roomsDiv .rooms .avail {
+  margin-bottom: 20px;
 }
 
 .home .roomsDiv .rooms .room {
-  padding: 5px 15px;
-  background-color: blueviolet;
-  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid;
   margin-bottom: 20px;
-  text-align: center;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  padding: 10px 25px;
+  width: 250px;
 }
 
 .home .roomsDiv .rooms .room .link {
   text-decoration: none;
-  color: #ffffff;
   font-size: 1.2rem;
   font-weight: bold;
+  margin-left: 15px;
   cursor: pointer;
 }
 
 .home .roomsDiv .roomForm {
-  width: 25%;
-  text-align: center;
-  height: 200px;
   margin-top: 20px;
 }
 
 .home .roomsDiv .roomForm .add {
-  text-align: center;
   font-weight: 1.3rem;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
-.home .roomsDiv .roomForm .may {
+.home .roomsDiv .roomForm .flexForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.home .roomsDiv .roomForm .flexForm .may {
   border-radius: 5px;
   border: 1px solid blueviolet;
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
-.home .roomsDiv .roomForm .may .roomName {
+.home .roomsDiv .roomForm .flexForm .may .roomName {
   display: block;
   color: #000000;
   background: transparent;
@@ -174,11 +215,9 @@
 }
 
 .home .roomsDiv .roomForm .addBtn {
-  width: 150px;
-  margin: 10px auto;
+  width: 100px;
+  margin-left: 10px;
   border-radius: 10px;
-  margin-bottom: 20px;
-  margin-top: 30px;
   color: white;
   cursor: pointer;
   padding: 5px 0px;
@@ -279,6 +318,19 @@
   cursor: pointer;
 }
 
+.header {
+  width: 100%;
+  padding: 15px 0px;
+  background-color: blueviolet;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+}
+
 .chat-main {
   width: 50%;
   margin: 0 auto;
@@ -294,20 +346,57 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 15px;
-  height: 70px;
+  padding: 10px;
 }
 
 .chat-main .chat-header .chat-logo {
-  width: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chat-main .chat-header .chat-logo .ball {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: grey;
+}
+
+.chat-main .chat-header .chat-logo h3 {
+  font-size: 1.6rem;
+  margin-left: 10px;
 }
 
 .chat-main .chat-body {
   min-height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 10px 0px 10px;
+}
+
+.chat-main .chat-body .mychat, .chat-main .chat-body .others {
+  width: 70px;
+  border: 1px solid;
+}
+
+.chat-main .chat-body .mychat {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.chat-main .chat-body .others {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .chat-main .chat-input-div {
@@ -339,10 +428,26 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 750px) {
+  .chat-main {
+    width: 70% !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .chat-main {
+    width: 90% !important;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Poppins', sans-serif;
 }
 /*# sourceMappingURL=main.css.map */
