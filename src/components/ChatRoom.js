@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useHistory, useRouteMatch} from 'react-router-dom'
 
-const ChatRoom = () => {
+const ChatRoom = ({socket}) => {
     const history = useRouteMatch()
 
-    console.log(history.params.id)
+    useEffect(()=>{
+        socket.emit('join-room', history.params.id )
+    })
+
+    // console.log(history.params.id)
     return (
         <div>
             <header className='header'>
                 <h1 style={{marginRight:'15px'}} >Let's Talk</h1>
-                <p class="fa fa-comments fa-2x" aria-hidden="true"></p>
+                <p className="fa fa-comments fa-2x" aria-hidden="true"></p>
             </header>
             <div className='chat-main'>
                 <div className='chat-header'>

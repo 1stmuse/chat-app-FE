@@ -64,7 +64,7 @@ const SignIn = (props) => {
                     <div className='login-btn'onClick={submit} >Login</div>
                 </div>
                 <div className='account'>
-                    <h3 className='h3'>don't have an account ? signUp</h3>
+                    <h3 className='h3' onClick={()=>props.history.push('/register')} >don't have an account ? signUp</h3>
                 </div>
             </div>
         </div>

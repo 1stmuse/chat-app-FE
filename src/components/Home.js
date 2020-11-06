@@ -5,22 +5,25 @@ import {Link} from 'react-router-dom'
 const Home = ({history}) => {
     const [room, setRoom] = useState('')
     const [rooms, setRooms] = useState([])
+    const token = localStorage.getItem('token')
 
     const fetchRooms = async()=>{
-        const response = await  fetch('http://localhost:8000/api/user/rooms',{credentials:'same-origin'})
+        const response = await  fetch(`http://localhost:8000/api/user/rooms/${token}`,)
         const data = await response.json()
         if(data.success){
             setRooms([...rooms, ...data.rooms])
         }
-        console.log(data)
+        // console.log(data)
+        console.log(localStorage.getItem('token'))
     }
     const clearCook=()=>{
         localStorage.clear('token')
+        history.push('/')
     }
 
     useEffect(()=>{
         fetchRooms()
-    },[rooms])
+    },[])
 
     return (
         <div className='home'>
@@ -49,7 +52,7 @@ const Home = ({history}) => {
                             rooms.map(room=>(
                                 <div key={room._id} className='room'>
                                     <h2>{room.name} </h2>
-                                    <Link className='link'>join </Link>
+                                    <Link to={`chat/${room._id}`} className='link'>join </Link>
                                 </div>
                             ))
                     }

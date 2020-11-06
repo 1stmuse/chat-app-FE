@@ -14,18 +14,20 @@ const Register = (props) => {
 
     const submit=()=>{
         if(username ==='' && password === '') return
-        fetch('https://0693ee4b-098e-4c78-8010-66e96299af11.mock.pstmn.io/login',{
+        fetch('http://localhost:8000/api/user/register',{
+            credentials:'same-origin',
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({
                 username,
-                password
+                password,
+                name
             })
         })
         .then(res=>res.json())
         .then(result=>{
             if(result.success){
-                props.history.push('/home')
+                props.history.push('/')
             }else{
                 alert('an error ocurred')
             }
@@ -73,7 +75,7 @@ const Register = (props) => {
                     <div className='login-btn'onClick={submit} >register</div>
                 </div>
                 <div className='account'>
-                    <h3 className='h3'>have an account? login</h3>
+                    <h3 className='h3' onClick={()=>props.history.push('./')} >have an account? login</h3>
                 </div>
             </div>
         </div>

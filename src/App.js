@@ -25,6 +25,7 @@ const App = () =>{
           Alert('success', 'connected')
           console.log('socket connected', message)
       })
+      newSock.on('mess',(mess)=>console.log(mess))
       newSock.on('disconnection',()=>{
           setSocket(null)
           Alert('error', 'socket disconnected')
@@ -38,9 +39,9 @@ const App = () =>{
 
   return(
     <div>
-      <Route path='/' exact component={Auth(SignIn, null)} />
+      <Route path='/' exact component={Auth(SignIn)} />
       <Route path='/register' component={Register} />
-      <Route path='/home' component={Auth(Home, true)}/>
+      <Route path='/home' component={Auth(Home)}/>
       <Route path={`/chat/:id`}>
         <ChatRoom socket={socket} />
       </Route>
