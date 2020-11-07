@@ -6,6 +6,7 @@ const Home = ({history}) => {
     const [room, setRoom] = useState('')
     const [rooms, setRooms] = useState([])
     const token = localStorage.getItem('token')
+    const user = localStorage.getItem('user')
 
     const fetchRooms = async()=>{
         const response = await  fetch(`http://localhost:8000/api/user/rooms/${token}`,)
@@ -29,9 +30,9 @@ const Home = ({history}) => {
         <div className='home'>
             <header className='header'>
                 <h1 style={{marginRight:'15px'}} >Let's Talk</h1>
-                <p class="fa fa-comments fa-2x" aria-hidden="true"></p>
+                <p className="fa fa-comments fa-2x" aria-hidden="true"></p>
             </header>
-            <div className='welcome'><h2>Welcome Akinnagbe!!</h2></div>
+            <div className='welcome'><h2>Welcome {user} </h2></div>
             <div className='roomsDiv'>
                 <div className='roomForm'>
                     <div className='add'>

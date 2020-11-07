@@ -21,6 +21,7 @@ const SignIn = (props) => {
         .then(result=>{
             if(result.success){
                 localStorage.setItem('token', result.token)
+                localStorage.setItem('user', result.user.name)
                 Alert('success', result.message)
                 props.history.push('/home')
             }else{

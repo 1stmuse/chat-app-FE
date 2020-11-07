@@ -1,15 +1,13 @@
 const initialState = {
-    user:null,
-    loading:true
+    socket:null,
 }
 
-export const userReducer =(state = initialState, action)=>{
+export const socketReducer =(state = initialState, action)=>{
     switch (action.type) {
-        case "LOGIN":
+        case "SOCKET":
             return {
                 ...state,
-                user:action.payload.user,
-                loading:action.payload.loading
+                socket:action.payload.socket,
             }
             break;
     

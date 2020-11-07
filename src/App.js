@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Route} from 'react-router-dom'
 import io from 'socket.io-client'
+import {useDispatch} from 'react-redux'
 import Alert from './components/Alert'
 import SignIn from './components/SignIn'
 import Home from './components/Home'
@@ -12,6 +13,7 @@ import Auth from './components/Auth'
 const App = () =>{
 
   const [socket, setSocket] =useState(null)
+  const dispatch = useDispatch()
 
   const socketInit = ()=>{
       const token = localStorage.getItem('token')
@@ -42,7 +44,7 @@ const App = () =>{
       <Route path='/' exact component={Auth(SignIn)} />
       <Route path='/register' component={Register} />
       <Route path='/home' component={Auth(Home)}/>
-      <Route path={`/chat/:id`}>
+      <Route path={`/chat/:id`} >
         <ChatRoom socket={socket} />
       </Route>
     </div>
