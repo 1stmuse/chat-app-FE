@@ -14,8 +14,6 @@ const Home = ({history}) => {
         if(data.success){
             setRooms([...rooms, ...data.rooms])
         }
-        // console.log(data)
-        console.log(localStorage.getItem('token'))
     }
     const clearCook=()=>{
         localStorage.clear('token')

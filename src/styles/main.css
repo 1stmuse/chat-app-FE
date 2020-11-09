@@ -373,6 +373,8 @@
 
 .chat-main .chat-body {
   min-height: 350px;
+  max-height: 400px;
+  overflow-y: scroll;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -380,26 +382,43 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 10px 10px 0px 10px;
+  padding: 20px 10px 0px 10px;
 }
 
 .chat-main .chat-body .mychat, .chat-main .chat-body .others {
-  width: 70px;
-  border: 1px solid;
+  padding: 5px 10px;
+  max-width: 70%;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.chat-main .chat-body .mychat {
+.chat-main .chat-body .mychat .mychat, .chat-main .chat-body .others .mychat {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: green;
+}
+
+.chat-main .chat-body .mychat .mychat div, .chat-main .chat-body .others .mychat div {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
 
-.chat-main .chat-body .others {
+.chat-main .chat-body .mychat .others, .chat-main .chat-body .others .others {
+  color: blue;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
 
-.chat-main .chat-input-div {
+.chat-main .chat-body .chat-input-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -410,7 +429,7 @@
   border: 2px solid blueviolet;
 }
 
-.chat-main .chat-input-div .chat-input {
+.chat-main .chat-body .chat-input-div .chat-input {
   width: 90%;
   display: block;
   height: 100%;
@@ -418,7 +437,7 @@
   padding-left: 10px;
 }
 
-.chat-main .chat-input-div .chat-btn {
+.chat-main .chat-body .chat-input-div .chat-btn {
   width: 100px;
   padding: 10px;
   background-color: blueviolet;
@@ -429,13 +448,13 @@
 }
 
 @media screen and (max-width: 750px) {
-  .chat-main {
+  .chat-main .chat-main {
     width: 70% !important;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .chat-main {
+  .chat-main .chat-main {
     width: 90% !important;
   }
 }

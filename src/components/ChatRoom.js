@@ -4,21 +4,27 @@ import {useHistory, useRouteMatch} from 'react-router-dom'
 const ChatRoom = ({socket}) => {
     const history = useRouteMatch()
     const roomId = history.params.id
+    const userName = localStorage.getItem('user')
     const [message, setMessage] =useState('')
     const [messages,setMessages]= useState([])
+    console.log(userName)
 
+    const addMessage=(e)=>{
+        e.preventDefault()
+        setMessage(e.target.value)
+    }
     const sendMessage = ()=>{
-        socket.emit('sendMessage', {message, roomId})
+        if(message === " ") return
+        socket.emit('sendMessage', {message, roomId, userName})
+        setMessage('')
     }
     useEffect(()=>{
         socket.on('new-message', (message)=>{
-            // setMessage(prev=> [...message, ...prev])
-            console.log(message)
+            setMessages(prev=> [...prev, message])
         })
-    }, [messages])
+    }, [])
 
     useEffect(()=>{
-        // console.log(socket)
        if(socket){
             socket.emit('joinRoom', roomId)
        }
@@ -26,7 +32,7 @@ const ChatRoom = ({socket}) => {
         return ()=>{
             socket.emit('leaveRoom', roomId)
         }
-    },)
+    },[])
 
     // console.log(history.params.id)
     return (
@@ -43,12 +49,21 @@ const ChatRoom = ({socket}) => {
                     </div>
                 </div>
                 <div className='chat-body'>
-                    <div className='mychat'>segun</div>
-                    <div className='others'>james</div>
+                    {messages && messages.map(message=>(
+                        <div className={message.name.trim().toLowerCase() === userName.toLowerCase() ? 'mychat' : 'others'}>
+                           <div>
+                               ~{message.name[0]}
+                           </div>
+                           <div>{message.message} </div>
+                        </div>
+                    ))}
                 </div>
                 <div className='chat-input-div'>
-                    <input type='text' className='chat-input' value={message} onChange={(e)=>setMessage(e.target.value)} />
-                    <div className='chat-btn'>Send</div>
+                    <input type='text' className='chat-input' 
+                        value={message} 
+                        onChange={(e)=> addMessage(e)} 
+                    />
+                    <div className='chat-btn'  onClick={sendMessage}>Send</div>
                 </div>
             </div>
         </div>

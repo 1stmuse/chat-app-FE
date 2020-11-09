@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Route} from 'react-router-dom'
 import io from 'socket.io-client'
-import {useDispatch} from 'react-redux'
 import Alert from './components/Alert'
 import SignIn from './components/SignIn'
 import Home from './components/Home'
@@ -13,7 +12,6 @@ import Auth from './components/Auth'
 const App = () =>{
 
   const [socket, setSocket] =useState(null)
-  const dispatch = useDispatch()
 
   const socketInit = ()=>{
       const token = localStorage.getItem('token')
@@ -25,7 +23,6 @@ const App = () =>{
 
       newSock.on('connect', (message)=>{
           Alert('success', 'connected')
-          console.log('socket connected', message)
       })
       newSock.on('mess',(mess)=>console.log(mess))
       newSock.on('disconnection',()=>{

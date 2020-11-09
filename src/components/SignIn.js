@@ -29,8 +29,7 @@ const SignIn = (props) => {
                 return
             }
         }).catch(err=>{
-            Alert('error', err)
-            console.log(err)
+            Alert('error', err.message)
         })
         setPassword('')
         setUsername('')
