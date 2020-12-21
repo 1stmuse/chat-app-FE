@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import io from 'socket.io-client'
+import Alert from './Alert'
 import {useHistory, useRouteMatch} from 'react-router-dom'
 
 const ChatRoom = ({socket}) => {
@@ -7,7 +9,32 @@ const ChatRoom = ({socket}) => {
     const userName = localStorage.getItem('user')
     const [message, setMessage] =useState('')
     const [messages,setMessages]= useState([])
-    console.log(userName)
+    
+    // const [socket, setSocket] =useState(null)
+
+    // const socketInit = ()=>{
+    //     const token = localStorage.getItem('token')
+    //     const newSock = io('http://localhost:8000', {
+    //         query:{
+    //             id:token
+    //         }
+    //     })
+  
+    //     newSock.on('connect', (message)=>{
+    //         Alert('success', 'connected')
+    //     })
+    //     newSock.on('mess',(mess)=>console.log(mess))
+    //     newSock.on('disconnection',()=>{
+    //         setSocket(null)
+    //         Alert('error', 'socket disconnected')
+    //     })
+        
+    //     setSocket(newSock)
+    // }
+
+    // useEffect(()=>{
+    //     socketInit()
+    // },[])
 
     const addMessage=(e)=>{
         e.preventDefault()
@@ -51,10 +78,10 @@ const ChatRoom = ({socket}) => {
                 <div className='chat-body'>
                     {messages && messages.map(message=>(
                         <div className={message.name.trim().toLowerCase() === userName.toLowerCase() ? 'mychat' : 'others'}>
-                           <div>
-                               ~{message.name[0]}
+                           <div className={message.name.trim().toLowerCase() === userName.toLowerCase() ? 'alias' : 'o-alias'}>
+                               {message.name[0].toUpperCase()}
                            </div>
-                           <div>{message.message} </div>
+                           <div className='a-msg'>{message.message} </div>
                         </div>
                     ))}
                 </div>

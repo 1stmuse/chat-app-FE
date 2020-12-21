@@ -41,7 +41,7 @@ const App = () =>{
       <Route path='/' exact component={Auth(SignIn)} />
       <Route path='/register' component={Register} />
       <Route path='/home' component={Auth(Home)}/>
-      <Route path={`/chat/:id`} >
+      <Route path={`/chat/:id`}>
         <ChatRoom socket={socket} />
       </Route>
     </div>

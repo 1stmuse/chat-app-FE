@@ -42,22 +42,42 @@
         .mychat, .others{
             padding: 5px 10px;
             max-width: 70%;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: flex;
-            flex-direction: column;
+            text-align: center;
         }
         .mychat{
             align-self: flex-end;
-            color: green;
             div{
                 align-self: flex-end;
             }
+            .alias{
+                order: 2;
+                width: 25px;
+                height: 25px;
+                margin-left: 10px;
+                border-radius: 50%;
+                background-color: lime;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 10px;
+            }
         }
         .others{
-            color: blue;
             align-self: flex-start;
             align-items: flex-start;
-            // background-color: blueviolet;
+            .o-alias{
+                width: 25px;
+                height: 25px;
+                margin-right: 10px;
+                border-radius: 50%;
+                background-color:blueviolet;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 10px;
+            }
         }
     }
     .chat-input-div{

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Alert from './Alert'
 import {Link} from 'react-router-dom'
 
 
@@ -20,6 +21,21 @@ const Home = ({history}) => {
         history.push('/')
     }
 
+    const createRoom = async () =>{
+        try {
+            const response = await  fetch(`http://localhost:8000/api/user/createRoom/${token}`,{
+            credentials:'same-origin',
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({name:room})
+            })
+            const data = await response.json()
+            if(data) fetchRooms()
+        } catch (error) {
+            Alert('error', 'could not create a room')
+        }
+    }
+
     useEffect(()=>{
         fetchRooms()
     },[])
@@ -29,6 +45,9 @@ const Home = ({history}) => {
             <header className='header'>
                 <h1 style={{marginRight:'15px'}} >Let's Talk</h1>
                 <p className="fa fa-comments fa-2x" aria-hidden="true"></p>
+                <div className='logout'  onClick={clearCook}>
+                    <p>Logout</p>
+                </div>
             </header>
             <div className='welcome'><h2>Welcome {user} </h2></div>
             <div className='roomsDiv'>
@@ -38,9 +57,13 @@ const Home = ({history}) => {
                     </div>
                     <div className='flexForm'>
                         <div className='may'>
-                            <input type='text' className='roomName'/>
+                            <input type='text' 
+                                value={room} 
+                                className='roomName'
+                                onChange={(e)=>setRoom(e.target.value)}
+                            />
                         </div>
-                            <div className='addBtn' onClick={clearCook} >Create</div>
+                            <div className='addBtn' onClick={createRoom} >Create</div>
                     </div>
                 </div>
                 <div className='rooms'>

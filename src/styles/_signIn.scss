@@ -1,37 +1,7 @@
 .signIn{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    .talk{
-        text-align: center;
-        margin-top: 50px;
-        color: white;
-        font-weight: bold;
-    }
-    .border{
-        margin: 20vh auto;
-        min-width: 300px;
-        height: 250px;
-    }
     .signIn-card{
-        position: relative;
-        // border: 1px solid blueviolet;
         max-width: 250px;
-        border-radius: 10px;
-        margin-bottom: 30px;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-            .logTxt{
-                position: absolute;
-                left: -50px;
-                top: -20px;
-                background-color: blueviolet;
-                color: white;
-                text-align: center;
-                width: 150px;
-                transform: rotate(-25deg);
-            }
             .inputs{
-                // max-width: 250px;
                 padding: 10px;
                 .text-input, .password-input{
                     margin: 0 auto;
@@ -51,30 +21,17 @@
                     outline: none;
                 }
             }
-            .login-btn{
-                width: 150px;
-                margin: 10px auto;
-                border-radius: 10px;
-                margin-bottom: 20px;
-                color:white;
-                cursor: pointer;
-                padding: 5px 0px;
-                text-align: center;
-                background:blueviolet
-            }
-            .login-btn:hover{
-               background-color: #6A3BB0;
-            }
+
     }
 }
 .text-input{
     margin-top: 60px !important;
 }
 .account{
-    // border: 1px solid blueviolet;
     color: blueviolet;
         .h3{
             cursor: pointer;
+            text-align: center;
         }
 }
 .text-input-name{

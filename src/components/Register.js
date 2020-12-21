@@ -1,11 +1,6 @@
 import React, {useState, useEffect} from 'react';
-// import io from 'socket.io-client'
+import Alert from './Alert'
 
-// const newSock = io('http://localhost:8000', {
-//     query:{
-//         id:'akinnagbe'
-//     }
-// })
 const Register = (props) => {
     const [name, setName]= useState('')
     const [username, setUsername] = useState('')
@@ -29,11 +24,12 @@ const Register = (props) => {
             if(result.success){
                 props.history.push('/')
             }else{
-                alert('an error ocurred')
+                Alert('error', result.error.message)
             }
         }).catch(err=>{
-            alert(err)
+            Alert('error', err)
         })
+        setName('')
         setPassword('')
         setUsername('')
 

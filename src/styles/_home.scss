@@ -2,11 +2,24 @@
     background: #ffffff;
     .header{
         width: 100%;
-        padding: 15px 0px;
+        padding: 15px 35px;
         background-color: blueviolet;
         display: flex;
-        justify-content: center;
+        align-items: center;
         color: white;
+        .logout{
+            margin-left: auto;
+            cursor: pointer;
+            padding: 8px 25px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        .logout:hover{
+            background-color: white;
+            color: blueviolet;
+            transition: .3s;
+        }
     }
     .welcome{
         margin-top: 50px;
@@ -21,11 +34,10 @@
         align-items: center;
         margin-top: 30px;
         .rooms{
-            .side-hr{
-                height: 300px;
-                border: 1px solid;
-                overflow: scroll;
-            }
+            min-width: 400px;
+            height: 300px;
+            overflow-y: scroll;
+            text-align: center;
             .avail{
                 margin-bottom: 20px;
             }
@@ -37,7 +49,7 @@
                 margin-bottom: 20px;
                 box-shadow: 1px 1px 1px rgba(0,0,0,0.6);
                 padding: 10px 25px;
-                width: 250px;
+                max-width: 350px;
                 .link{
                     text-decoration: none;
                     font-size: 1.2rem;

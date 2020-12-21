@@ -1,7 +1,6 @@
 .signIn{
     width: 100vw;
     height: 100vh;
-    // background-color: #000000;
     overflow: hidden;
     .talk{
         text-align: center;
@@ -15,8 +14,6 @@
         height: 250px;
     }
     .signIn-card{
-        // width: 250px;
-        // height: 250px;
         position: relative;
         border: 1px solid blueviolet;
         border-radius: 10px;
@@ -33,9 +30,7 @@
                 transform: rotate(-25deg);
             }
             .inputs-reg{
-                // border: 1px solid red;
                 margin-top: 50px;
-                // width: 400px;
                 padding: 10px;
                 .text-input-reg, .password-input-reg{
                     margin: 0 auto;
@@ -61,20 +56,15 @@
                 border-radius: 10px;
                 margin-bottom: 20px;
                 color:white;
+                font-weight: bold;
                 cursor: pointer;
                 padding: 5px 0px;
                 text-align: center;
                 background:blueviolet
             }
+            .login-btn:hover{
+                background-color: #6A3BB0;
+             }
            
     }
-}
-.text-input{
-    margin-top: 60px !important;
-}
-.account{
-    color: blueviolet;
-        .h3{
-            cursor: pointer;
-        }
 }

@@ -1,41 +1,5 @@
-.signIn {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.signIn .talk {
-  text-align: center;
-  margin-top: 50px;
-  color: white;
-  font-weight: bold;
-}
-
-.signIn .border {
-  margin: 20vh auto;
-  min-width: 300px;
-  height: 250px;
-}
-
 .signIn .signIn-card {
-  position: relative;
   max-width: 250px;
-  border-radius: 10px;
-  margin-bottom: 30px;
-  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-}
-
-.signIn .signIn-card .logTxt {
-  position: absolute;
-  left: -50px;
-  top: -20px;
-  background-color: blueviolet;
-  color: white;
-  text-align: center;
-  width: 150px;
-  -webkit-transform: rotate(-25deg);
-          transform: rotate(-25deg);
 }
 
 .signIn .signIn-card .inputs {
@@ -62,22 +26,6 @@
   outline: none;
 }
 
-.signIn .signIn-card .login-btn {
-  width: 150px;
-  margin: 10px auto;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  color: white;
-  cursor: pointer;
-  padding: 5px 0px;
-  text-align: center;
-  background: blueviolet;
-}
-
-.signIn .signIn-card .login-btn:hover {
-  background-color: #6A3BB0;
-}
-
 .text-input {
   margin-top: 60px !important;
 }
@@ -88,6 +36,7 @@
 
 .account .h3 {
   cursor: pointer;
+  text-align: center;
 }
 
 .text-input-name {
@@ -105,15 +54,31 @@
 
 .home .header {
   width: 100%;
-  padding: 15px 0px;
+  padding: 15px 35px;
   background-color: blueviolet;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
+}
+
+.home .header .logout {
+  margin-left: auto;
+  cursor: pointer;
+  padding: 8px 25px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.home .header .logout:hover {
+  background-color: white;
+  color: blueviolet;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .home .welcome {
@@ -144,10 +109,11 @@
   margin-top: 30px;
 }
 
-.home .roomsDiv .rooms .side-hr {
+.home .roomsDiv .rooms {
+  min-width: 400px;
   height: 300px;
-  border: 1px solid;
-  overflow: scroll;
+  overflow-y: scroll;
+  text-align: center;
 }
 
 .home .roomsDiv .rooms .avail {
@@ -169,7 +135,7 @@
   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
           box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
   padding: 10px 25px;
-  width: 250px;
+  max-width: 350px;
 }
 
 .home .roomsDiv .rooms .room .link {
@@ -300,22 +266,15 @@
   border-radius: 10px;
   margin-bottom: 20px;
   color: white;
+  font-weight: bold;
   cursor: pointer;
   padding: 5px 0px;
   text-align: center;
   background: blueviolet;
 }
 
-.text-input {
-  margin-top: 60px !important;
-}
-
-.account {
-  color: blueviolet;
-}
-
-.account .h3 {
-  cursor: pointer;
+.signIn .signIn-card .login-btn:hover {
+  background-color: #6A3BB0;
 }
 
 .header {
@@ -388,20 +347,16 @@
 .chat-main .chat-body .mychat, .chat-main .chat-body .others {
   padding: 5px 10px;
   max-width: 70%;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  text-align: center;
 }
 
 .chat-main .chat-body .mychat {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  color: green;
 }
 
 .chat-main .chat-body .mychat div {
@@ -409,13 +364,51 @@
       align-self: flex-end;
 }
 
+.chat-main .chat-body .mychat .alias {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: lime;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 10px;
+}
+
 .chat-main .chat-body .others {
-  color: blue;
   -ms-flex-item-align: start;
       align-self: flex-start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.chat-main .chat-body .others .o-alias {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: blueviolet;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 10px;
 }
 
 .chat-main .chat-input-div {
