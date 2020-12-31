@@ -290,6 +290,44 @@
   color: white;
 }
 
+.chat-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.members {
+  margin-top: 50px;
+  margin-left: 20px;
+  background-color: blueviolet;
+  color: white;
+  border: 1px solid blue;
+  padding: 10px;
+}
+
+.members-label {
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.online {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: green;
+  margin-right: 15px;
+}
+
+.memb-names {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
 .chat-main {
   width: 50%;
   margin: 0 auto;
